@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DWS | Abstimmen</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="/"><b>D</b>igitales<b>W</b>ahl<b>S</b>ystem</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <h3 class="login-box-msg">Administratorzugriff Authenfizieren</h3>
+        <div class="col-md-8 login-box-msg">
+          <h1 id="tracker">00:00:00</h1>
+        </div>
+        <div class="btn-group">
+          <form method="post" action="<%=url%>/dws/post/admindeauth/">
+            <button name="key" value=<%=token%> class="btn btn-block btn-danger">Admin-Zugriff beenden</button>
+          </form>
+        </div>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <!-- /.login-box -->
+
+  <!-- jQuery -->
+  <script src="/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/dist/js/adminlte.min.js"></script>
+  <script>
+    $(function () {
+      registerClock();
+      setTime();
+    });
+    function registerClock() {
+      setInterval(updateClock, 250);
+    }
+    function updateClock() {
+      setTime();
+    }
+
+    var startTime = new Date();
+    function updateClock() {
+      setTime();
+      setStopWatch();
+    }
+    function setStopWatch() {
+      var duration = new Date(currentdate - startTime);
+      var showDuration = duration.getHours() - 1 + ":"
+        + duration.getMinutes() + ":"
+        + duration.getSeconds();
+      $("#tracker").text(showDuration);
+    }
+    $(function() {
+  setTime();
+});
+var currentdate;
+function setTime() {
+  currentdate = new Date();
+  var datetime = + currentdate.getDate() + "."
+                + (currentdate.getMonth()+1)  + "."
+                + currentdate.getFullYear() + " "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
+  $("#time").text(datetime);
+}
+  </script>
+
+</body>
+
+</html>
