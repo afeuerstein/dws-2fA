@@ -70,3 +70,4 @@ typings/
 
 #MongoDB test code
 /mongodb
+/.idea

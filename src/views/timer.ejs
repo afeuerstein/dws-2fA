@@ -28,13 +28,13 @@
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
-        <h3 class="login-box-msg">Administratorzugriff Authenfizieren</h3>
-        <div class="col-md-8 login-box-msg">
+        <h3>Administratorzugriff Authenfizieren</h3>
+        <div>
           <h1 id="tracker">00:00:00</h1>
         </div>
         <div class="btn-group">
-          <form method="post" action="<%=url%>/auth/post/admindeauth/">
-            <button name="key" value=<%=token%> class="btn btn-block btn-danger">Admin-Zugriff beenden</button>
+          <form method="post" action="<%=url%>/auth/admin2fa">
+            <button name="dismiss" value=<%=token%> class="btn btn-danger">Admin-Zugriff beenden</button>
           </form>
         </div>
       </div>

@@ -27,11 +27,13 @@
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
-        <h3 class="login-box-msg">Administratorzugriff Authenfizieren</h3>
-        <p>Benutzen Sie den unteren Button um sich im Administrator-Account zu authenfizieren</p>
-        <div class="btn-group">
-          <form method="post" action="<%=url%>/auth/post/adminauth/">
-            <button name="key" value=<%=token%> class="btn btn-block btn-success">Admin-Zugriff erlauben</button>
+        <h3>Administratorzugriff Authenfizieren</h3>
+        <p>Zugriff auf das DWS wurde von einem Administratorkonto verlangt. </p>
+        <div>
+          <form method="post" class="btn-group" action="<%=url%>/auth/admin2fa/">
+            <button name="approve" value="<%=token%>" class="btn btn-success">Zulassen</button>
+            <button name="dismiss" value="<%=token%>" class="btn btn-danger">Ablehnen</button>
+            <button name="deactivate" value="<%=token%>" class="btn btn-default">Deaktivieren</button>
           </form>
         </div>
       </div>
