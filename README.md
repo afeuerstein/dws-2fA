@@ -11,3 +11,6 @@ Prototyp eines Zwei-Faktor-Authentifizierungssystems mithilfe von Einplatinenrec
 2. Mit `yarn install` oder `npm install` die Node-Module installieren.
 3. `config.json` nach belieben bearbeiten.
 4. Mit `yarn start` oder `npm start` das System starten.
+
+### Lizenz
+© Copyright **Alexandros Feuerstein**. Alle Rechte vorbehalten.
