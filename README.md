@@ -14,3 +14,5 @@ Prototyp eines Zwei-Faktor-Authentifizierungssystems mithilfe von Einplatinenrec
 
 ### Lizenz
 © Copyright **Alexandros Feuerstein**. Alle Rechte vorbehalten.
+
+"AdminLTE" wird von diesem Projekt benutzt und nutzt die MIT-Lizenz (https://github.com/ColorlibHQ/AdminLTE/blob/master/LICENSE)
